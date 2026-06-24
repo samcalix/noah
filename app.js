@@ -24,6 +24,23 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  // --- Mobile Menu Toggle Icon (Hamburger to X) ---
+  const navbarCollapse = document.getElementById('navbarNav');
+  const navbarToggler = document.querySelector('.navbar-toggler');
+  const togglerIcon = navbarToggler ? navbarToggler.querySelector('i') : null;
+
+  if (navbarCollapse && togglerIcon) {
+    navbarCollapse.addEventListener('show.bs.collapse', () => {
+      togglerIcon.classList.remove('fa-bars');
+      togglerIcon.classList.add('fa-xmark');
+    });
+
+    navbarCollapse.addEventListener('hide.bs.collapse', () => {
+      togglerIcon.classList.remove('fa-xmark');
+      togglerIcon.classList.add('fa-bars');
+    });
+  }
+
   // --- Dynamic Timeline Progress Filler ---
   const timelineContainer = document.querySelector('.timeline-container');
   const timelineSteps = document.querySelectorAll('.timeline-step');

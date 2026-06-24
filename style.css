@@ -1,0 +1,786 @@
+/* 
+ * Noah - Mobile First Gen Z Bible Website
+ * Custom Stylesheet (Apple-inspired Design System)
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  --bg-primary: #F5F5F7;
+  --bg-secondary: #FFFFFF;
+  --text-primary: #1D1D1F;
+  --text-secondary: #6E6E73;
+  --success: #34C759;
+  
+  /* Soft Apple-style Rainbow Gradient representing the Promise */
+  --rainbow-gradient: linear-gradient(135deg, #FF6B6B 0%, #FF8E53 20%, #FFD200 40%, #4CD964 60%, #5AC8FA 80%, #5856D6 100%);
+  --rainbow-gradient-light: linear-gradient(135deg, rgba(255,107,107,0.1) 0%, rgba(255,142,83,0.1) 20%, rgba(255,210,0,0.1) 40%, rgba(76,217,100,0.1) 60%, rgba(90,200,250,0.1) 80%, rgba(88,86,214,0.1) 100%);
+  
+  --radius-lg: 24px;
+  --radius-md: 16px;
+  --radius-sm: 12px;
+  
+  --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.02);
+  --shadow-md: 0 8px 30px rgba(0, 0, 0, 0.04);
+  --shadow-lg: 0 20px 48px rgba(0, 0, 0, 0.06);
+  --shadow-hover: 0 30px 60px rgba(0, 0, 0, 0.12);
+  
+  --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Inter", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-fast: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  line-height: 1.5;
+  font-size: 16px;
+}
+
+/* Typography Extensions */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+}
+
+p {
+  color: var(--text-secondary);
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+::-webkit-scrollbar-thumb {
+  background: #D2D2D7;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #A1A1A6;
+}
+
+/* Glassmorphism Navigation */
+.nav-glass {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1030;
+  background: rgba(245, 245, 247, 0.72);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  transition: var(--transition-smooth);
+}
+
+.nav-glass.scrolled {
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: var(--shadow-sm);
+}
+
+.nav-brand-apple {
+  font-weight: 700;
+  font-size: 1.25rem;
+  letter-spacing: -0.03em;
+  background: var(--rainbow-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.nav-link-apple {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-secondary) !important;
+  padding: 0.5rem 1rem !important;
+  border-radius: 20px;
+  transition: var(--transition-fast);
+}
+
+.nav-link-apple:hover, .nav-link-apple.active {
+  color: var(--text-primary) !important;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+
+/* Character Dropdown Customization */
+.dropdown-menu-apple {
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  padding: 0.75rem;
+  min-width: 220px;
+  margin-top: 10px !important;
+  animation: dropdownFadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes dropdownFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.dropdown-item-apple {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.6rem 1rem;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  transition: var(--transition-fast);
+}
+
+.dropdown-item-apple:hover {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+.dropdown-item-apple.disabled-char {
+  color: var(--text-secondary);
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.dropdown-item-apple.disabled-char:hover {
+  background-color: transparent;
+}
+
+.dropdown-item-apple .status-badge {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.15rem 0.45rem;
+  border-radius: 6px;
+  background: rgba(0,0,0,0.05);
+}
+
+.dropdown-item-apple.disabled-char .status-badge {
+  background: rgba(0,0,0,0.04);
+  color: var(--text-secondary);
+}
+
+.dropdown-item-apple.active-char .status-badge {
+  background: rgba(52, 199, 89, 0.15);
+  color: var(--success);
+}
+
+/* Base Layout & Sections */
+section {
+  padding: 6rem 0;
+  position: relative;
+}
+
+/* Specific Section Padding Adjustments */
+#hero {
+  padding-top: 8.5rem;
+  padding-bottom: 5rem;
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+}
+
+/* Apple Cards Style */
+.apple-card {
+  background: var(--bg-secondary);
+  border-radius: var(--radius-lg);
+  padding: 2.25rem;
+  box-shadow: var(--shadow-md);
+  border: 1px solid rgba(0, 0, 0, 0.02);
+  transition: var(--transition-smooth);
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.apple-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-hover);
+}
+
+.apple-card-icon {
+  font-size: 2.2rem;
+  margin-bottom: 1.5rem;
+  display: inline-block;
+}
+
+.apple-card-title {
+  font-size: 1.4rem;
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+}
+
+/* Rainbow Gradient Accents */
+.gradient-text {
+  background: var(--rainbow-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+/* Custom Buttons */
+.btn-apple-primary {
+  background: var(--text-primary);
+  color: #FFFFFF;
+  font-weight: 600;
+  padding: 0.9rem 2.2rem;
+  border-radius: 30px;
+  border: none;
+  font-size: 1rem;
+  transition: var(--transition-smooth);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn-apple-primary:hover {
+  background: #323236;
+  color: #FFFFFF;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.btn-apple-secondary {
+  background: transparent;
+  color: var(--text-primary);
+  font-weight: 600;
+  padding: 0.9rem 2.2rem;
+  border-radius: 30px;
+  border: 2px solid var(--text-primary);
+  font-size: 1rem;
+  transition: var(--transition-smooth);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn-apple-secondary:hover {
+  background: rgba(0, 0, 0, 0.04);
+  transform: translateY(-2px);
+}
+
+.btn-rainbow {
+  background: var(--rainbow-gradient);
+  color: #FFFFFF;
+  font-weight: 600;
+  padding: 0.9rem 2.2rem;
+  border-radius: 30px;
+  border: none;
+  font-size: 1rem;
+  transition: var(--transition-smooth);
+  box-shadow: 0 6px 20px rgba(255, 107, 107, 0.25);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn-rainbow:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(255, 107, 107, 0.4);
+  color: #FFFFFF;
+  opacity: 0.95;
+}
+
+/* Floating animation details for hero & illustrations */
+.floating-element {
+  animation: float 6s ease-in-out infinite;
+}
+
+.floating-element-delayed {
+  animation: float 6s ease-in-out infinite;
+  animation-delay: 2.5s;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-12px) rotate(1deg);
+  }
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+}
+
+/* Hero Illustration container */
+.hero-image-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.hero-image-wrapper {
+  background: #FFFFFF;
+  padding: 1.25rem;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  border: 1px solid rgba(0,0,0,0.03);
+  position: relative;
+  overflow: hidden;
+  max-width: 460px;
+  width: 100%;
+}
+
+.hero-image-wrapper img {
+  border-radius: 16px;
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: var(--transition-smooth);
+}
+
+.hero-image-wrapper:hover img {
+  transform: scale(1.03);
+}
+
+/* Relatable Cards specific background glow */
+.relatable-card {
+  border: none;
+  background: var(--bg-secondary);
+}
+
+.relatable-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--rainbow-gradient);
+  opacity: 0;
+  transition: var(--transition-smooth);
+}
+
+.relatable-card:hover::before {
+  opacity: 1;
+}
+
+/* Core Values Cards */
+.value-card {
+  border: none;
+  overflow: hidden;
+  background: var(--bg-secondary);
+}
+
+.value-card .value-glow {
+  position: absolute;
+  bottom: -40px;
+  right: -40px;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: var(--rainbow-gradient);
+  filter: blur(40px);
+  opacity: 0.15;
+  transition: var(--transition-smooth);
+}
+
+.value-card:hover .value-glow {
+  transform: scale(1.6);
+  opacity: 0.35;
+}
+
+/* Journal/Reflection Section styling */
+.journal-card {
+  background: #FFFFFF;
+  border-radius: var(--radius-lg);
+  padding: 3rem 2.5rem;
+  box-shadow: var(--shadow-lg);
+  border: none;
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+.journal-textarea {
+  width: 100%;
+  min-height: 140px;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  padding: 1.25rem;
+  font-size: 1rem;
+  color: var(--text-primary);
+  background-color: var(--bg-primary);
+  outline: none;
+  resize: vertical;
+  transition: var(--transition-smooth);
+  font-family: inherit;
+}
+
+.journal-textarea:focus {
+  border-color: transparent;
+  box-shadow: 0 0 0 3px rgba(88, 86, 214, 0.15);
+  background-color: #FFFFFF;
+}
+
+.journal-status-msg {
+  font-size: 0.9rem;
+  margin-top: 1rem;
+  color: var(--success);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  opacity: 0;
+  transform: translateY(5px);
+  transition: var(--transition-smooth);
+}
+
+.journal-status-msg.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* The Challenge Card */
+.challenge-card {
+  background: linear-gradient(135deg, #1d1d1f 0%, #111112 100%);
+  color: #FFFFFF;
+  border-radius: var(--radius-lg);
+  padding: 4rem 3rem;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+
+.challenge-card h2, .challenge-card p, .challenge-card h3 {
+  color: #FFFFFF;
+}
+
+.challenge-card .rainbow-blob {
+  position: absolute;
+  top: -10%;
+  right: -10%;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  background: var(--rainbow-gradient);
+  filter: blur(80px);
+  opacity: 0.25;
+  animation: blobFloat 10s ease-in-out infinite;
+}
+
+@keyframes blobFloat {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(-30px, 30px) scale(1.1);
+  }
+}
+
+.challenge-btn {
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  border: none;
+  font-weight: 600;
+  padding: 0.9rem 2.2rem;
+  border-radius: 30px;
+  transition: var(--transition-smooth);
+  box-shadow: 0 4px 15px rgba(255,255,255,0.08);
+}
+
+.challenge-btn:hover {
+  background: var(--bg-primary);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(255,255,255,0.15);
+}
+
+.challenge-status {
+  margin-top: 1.5rem;
+  font-weight: 600;
+  color: var(--success);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  opacity: 0;
+  transform: scale(0.9);
+  transition: var(--transition-smooth);
+}
+
+.challenge-status.show {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Timeline Custom Styles */
+.timeline-container {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+.timeline-line {
+  position: absolute;
+  left: 31px;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 2px;
+}
+
+.timeline-line-filled {
+  position: absolute;
+  left: 31px;
+  top: 0;
+  height: 0%;
+  width: 4px;
+  background: var(--rainbow-gradient);
+  border-radius: 2px;
+  transition: height 0.1s linear;
+}
+
+.timeline-step {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 3.5rem;
+}
+
+.timeline-step:last-child {
+  margin-bottom: 0;
+}
+
+.timeline-node {
+  width: 66px;
+  height: 66px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  border: 4px solid var(--bg-primary);
+  box-shadow: var(--shadow-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  z-index: 10;
+  transition: var(--transition-smooth);
+  position: relative;
+}
+
+.timeline-step.active .timeline-node {
+  border-color: #FFFFFF;
+  background: var(--rainbow-gradient-light);
+  box-shadow: 0 0 0 4px rgba(88, 86, 214, 0.15), var(--shadow-md);
+}
+
+.timeline-content {
+  flex: 1;
+  margin-left: 2rem;
+  background: #FFFFFF;
+  border-radius: var(--radius-md);
+  padding: 1.75rem 2rem;
+  box-shadow: var(--shadow-md);
+  border: 1px solid rgba(0, 0, 0, 0.02);
+  transition: var(--transition-smooth);
+}
+
+.timeline-step:hover .timeline-content {
+  transform: translateX(6px);
+  box-shadow: var(--shadow-lg);
+}
+
+.timeline-number {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  margin-bottom: 0.25rem;
+  letter-spacing: 0.05em;
+  display: block;
+}
+
+.timeline-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0px;
+}
+
+/* Bible Verse Section */
+.verse-section {
+  background: var(--rainbow-gradient-light);
+  border-radius: var(--radius-lg);
+  padding: 4.5rem 3rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.verse-quote {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 2.2rem;
+  line-height: 1.4;
+  font-weight: 400;
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+  font-style: italic;
+}
+
+.verse-reference {
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+
+/* Prayer Section */
+.prayer-card {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 3.5rem 2.5rem;
+  background: #FFFFFF;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  position: relative;
+}
+
+.prayer-text-container {
+  margin: 2rem 0;
+  line-height: 2;
+  font-size: 1.15rem;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--text-primary);
+}
+
+.prayer-line {
+  margin-bottom: 1rem;
+  opacity: 0.85;
+}
+
+.prayer-status {
+  font-size: 0.9rem;
+  margin-top: 1rem;
+  font-weight: 600;
+  color: var(--success);
+  opacity: 0;
+  transform: translateY(5px);
+  transition: var(--transition-smooth);
+}
+
+.prayer-status.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Floating heart elements generated by click */
+.floating-heart {
+  position: absolute;
+  font-size: 1.5rem;
+  pointer-events: none;
+  animation: floatHeart 2.5s ease-out forwards;
+  z-index: 100;
+  opacity: 0;
+}
+
+@keyframes floatHeart {
+  0% {
+    transform: translateY(0) scale(0.6) rotate(0deg);
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(-150px) scale(1) rotate(20deg);
+    opacity: 0;
+  }
+}
+
+/* Footer Section */
+footer {
+  padding: 5rem 0 3rem 0;
+  background-color: #FFFFFF;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.footer-quote {
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+  line-height: 1.4;
+}
+
+.footer-logo {
+  font-weight: 700;
+  font-size: 1.1rem;
+  background: var(--rainbow-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+/* Responsive Scaling details */
+@media (max-width: 768px) {
+  section {
+    padding: 4.5rem 0;
+  }
+  #hero {
+    padding-top: 7.5rem;
+    padding-bottom: 4rem;
+    text-align: center;
+  }
+  .hero-image-container {
+    margin-top: 2rem;
+  }
+  .verse-quote {
+    font-size: 1.6rem;
+  }
+  .timeline-line {
+    left: 21px;
+  }
+  .timeline-line-filled {
+    left: 21px;
+  }
+  .timeline-node {
+    width: 46px;
+    height: 46px;
+    font-size: 1.2rem;
+  }
+  .timeline-content {
+    margin-left: 1.25rem;
+    padding: 1.25rem;
+  }
+  .timeline-title {
+    font-size: 1.05rem;
+  }
+  .apple-card {
+    padding: 1.75rem;
+  }
+  .challenge-card {
+    padding: 3rem 1.75rem;
+    text-align: center;
+  }
+}

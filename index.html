@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO Best Practices -->
+  <title>Noah | A Vision for Gen Z - Bible Character Experience</title>
+  <meta name="description" content="Explore Noah's life through a stunning Apple-inspired interactive guide. Learn how faith, courage, and listening to God can help Gen Z navigate the noise of today.">
+  <meta name="keywords" content="Bible character Noah, Gen Z faith, Christian meditation app, Bible study, trust God, online Bible stories">
+  <meta name="author" content="Antigravity Devs">
+  
+  <!-- Google Fonts & Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Bootstrap 5 CSS CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- AOS (Animate on Scroll) CSS CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  
+  <!-- Custom CSS Styles -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Navigation Menu (Glassmorphism Navbar) -->
+  <header>
+    <nav id="main-navbar" class="navbar navbar-expand-lg nav-glass py-3">
+      <div class="container px-4">
+        <a class="navbar-brand nav-brand-apple" href="#hero">
+          <span><i class="fa-solid fa-rainbow me-1"></i> Noah</span>
+        </a>
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+          <ul class="navbar-nav align-items-center gap-2 mt-3 mt-lg-0">
+            <li class="nav-item dropdown">
+              <a class="nav-link nav-link-apple dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="fa-solid fa-compass me-1"></i> Characters
+              </a>
+              <ul class="dropdown-menu dropdown-menu-apple dropdown-menu-end" aria-labelledby="navbarDropdown">
+                <li>
+                  <a class="dropdown-item dropdown-item-apple active-char" href="#hero">
+                    <span><i class="fa-solid fa-book-open me-2 text-primary"></i> Noah</span>
+                    <span class="status-badge">Active</span>
+                  </a>
+                </li>
+                <li><hr class="dropdown-divider opacity-50"></li>
+                <li>
+                  <a class="dropdown-item dropdown-item-apple disabled-char" href="#">
+                    <span><i class="fa-solid fa-lock me-2 fs-7 opacity-75"></i> Daniel</span>
+                    <span class="status-badge">Soon</span>
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item dropdown-item-apple disabled-char" href="#">
+                    <span><i class="fa-solid fa-lock me-2 fs-7 opacity-75"></i> David</span>
+                    <span class="status-badge">Soon</span>
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item dropdown-item-apple disabled-char" href="#">
+                    <span><i class="fa-solid fa-lock me-2 fs-7 opacity-75"></i> Jonah</span>
+                    <span class="status-badge">Soon</span>
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item dropdown-item-apple disabled-char" href="#">
+                    <span><i class="fa-solid fa-lock me-2 fs-7 opacity-75"></i> Joseph</span>
+                    <span class="status-badge">Soon</span>
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item dropdown-item-apple disabled-char" href="#">
+                    <span><i class="fa-solid fa-lock me-2 fs-7 opacity-75"></i> Moses</span>
+                    <span class="status-badge">Soon</span>
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item dropdown-item-apple disabled-char" href="#">
+                    <span><i class="fa-solid fa-lock me-2 fs-7 opacity-75"></i> Esther</span>
+                    <span class="status-badge">Soon</span>
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item dropdown-item-apple disabled-char" href="#">
+                    <span><i class="fa-solid fa-lock me-2 fs-7 opacity-75"></i> Paul</span>
+                    <span class="status-badge">Soon</span>
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item dropdown-item-apple disabled-char" href="#">
+                    <span><i class="fa-solid fa-lock me-2 fs-7 opacity-75"></i> Jesus</span>
+                    <span class="status-badge">Soon</span>
+                  </a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section id="hero">
+      <div class="container px-4">
+        <div class="row align-items-center g-5">
+          <!-- Text Columns -->
+          <div class="col-12 col-lg-6 text-center text-lg-start">
+            <span class="badge rounded-pill bg-light text-dark mb-3 px-3 py-2 border shadow-sm" data-aos="fade-down">
+              <i class="fa-solid fa-star me-2 text-warning"></i> Introducing Biblical Mentors
+            </span>
+            <h1 class="display-3 mb-2 fw-800" data-aos="fade-up">
+              <span class="gradient-text"><i class="fa-solid fa-rainbow me-2"></i> Noah</span>
+            </h1>
+            <p class="h4 text-muted mb-4 fw-500" data-aos="fade-up" data-aos-delay="100">
+              A Vision For Gen Z
+            </p>
+            <div class="my-4 border-start border-3 border-dark-subtle ps-4 text-start d-inline-block d-lg-block" data-aos="fade-up" data-aos-delay="200">
+              <p class="fs-3 fw-bold mb-1 text-dark">One man.</p>
+              <p class="fs-3 fw-bold mb-1 text-dark">One God.</p>
+              <p class="fs-3 fw-bold mb-1 text-dark">One decision.</p>
+              <p class="fs-5 text-secondary mt-2">That decision changed the world.</p>
+            </div>
+            <div class="mt-4 pt-2" data-aos="fade-up" data-aos-delay="300">
+              <a href="#why-noah-matters" id="explore-btn" class="btn btn-apple-primary btn-lg">
+                Explore Noah <i class="fa-solid fa-arrow-down fs-6"></i>
+              </a>
+            </div>
+          </div>
+          
+          <!-- Image Mockup -->
+          <div class="col-12 col-lg-6" data-aos="zoom-in" data-aos-delay="200">
+            <div class="hero-image-container">
+              <div class="hero-image-wrapper floating-element">
+                <img src="./noah_attachments/noah1.png" alt="Noah Listening to God illustration" class="img-fluid">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Noah Matters Today Section -->
+    <section id="why-noah-matters" class="bg-light-subtle">
+      <div class="container px-4">
+        <div class="text-center mb-5 max-w-700 mx-auto" data-aos="fade-up">
+          <h2 class="display-5 fw-bold mb-3">Why Noah Matters Today</h2>
+          <p class="lead">Navigating the absolute noise of the 21st century can feel like drowning. Let's look at the contrast between culture and faith.</p>
+        </div>
+        
+        <!-- Relatable Cards Row -->
+        <div class="row g-4 mb-5">
+          <div class="col-12 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+            <div class="apple-card relatable-card">
+              <div class="apple-card-icon"><i class="fa-solid fa-headphones" style="color: #4E65FF;"></i></div>
+              <h3 class="apple-card-title">Noise</h3>
+              <p>Everyone has a voice, shouting opinions across every feed, podcast, and channel.</p>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+            <div class="apple-card relatable-card">
+              <div class="apple-card-icon"><i class="fa-solid fa-mobile-screen-button" style="color: #8A2BE2;"></i></div>
+              <h3 class="apple-card-title">Algorithms</h3>
+              <p>Social media tells us what to do, what to wear, and how we should define success.</p>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+            <div class="apple-card relatable-card">
+              <div class="apple-card-icon"><i class="fa-solid fa-earth-americas" style="color: #00C9FF;"></i></div>
+              <h3 class="apple-card-title">Standards</h3>
+              <p>The world tells us what is right, shifting the definitions of truth day by day.</p>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="400">
+            <div class="apple-card relatable-card">
+              <div class="apple-card-icon"><i class="fa-solid fa-hands-praying" style="color: #FF6B6B;"></i></div>
+              <h3 class="apple-card-title">Quiet</h3>
+              <p class="text-dark fw-500">But Noah listened to God. He tuned out the crowd to align with the Creator.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Integrated Visual Segment -->
+        <div class="row align-items-center g-5 mt-4 pt-3">
+          <div class="col-12 col-md-6" data-aos="fade-right">
+            <div class="pe-0 pe-md-4">
+              <h3 class="h2 fw-bold mb-3">Tuning Out the Noise</h3>
+              <p class="lead mb-4">Noah didn't have an iPhone, but he had the exact same challenge we face: pressure to conform to the surrounding culture. When everyone else walked away from God, Noah chose to listen.</p>
+              <div class="d-flex align-items-center gap-3">
+                <div class="bg-white p-3 rounded-circle shadow-sm">
+                  <i class="fa-solid fa-headbox fa-volume-mute text-danger fs-4"></i>
+                </div>
+                <div>
+                  <h4 class="h6 fw-bold mb-0">The Standout Choice</h4>
+                  <p class="small mb-0">Living counter-culturally is the ultimate Gen Z strength.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 text-center" data-aos="fade-left">
+            <div class="hero-image-wrapper mx-auto floating-element-delayed">
+              <img src="./noah_attachments/noah2.png" alt="Sailing through the storms of life" class="img-fluid">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Core Values Section -->
+    <section id="core-values">
+      <div class="container px-4">
+        <div class="text-center mb-5" data-aos="fade-up">
+          <h2 class="display-5 fw-bold mb-3">What Noah Teaches Us</h2>
+          <p class="lead text-secondary max-w-700 mx-auto">Four timeless values that help anchor your identity when the storm hit.</p>
+        </div>
+        
+        <div class="row g-4">
+          <!-- Card 1 -->
+          <div class="col-12 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="apple-card value-card">
+              <span class="apple-card-icon"><i class="fa-solid fa-shield-halved" style="color: #FF9500;"></i></span>
+              <h3 class="apple-card-title">Obedience</h3>
+              <p>Doing what God says even when it is difficult, counter-cultural, or doesn't make immediate sense to those around you.</p>
+              <div class="value-glow"></div>
+            </div>
+          </div>
+          <!-- Card 2 -->
+          <div class="col-12 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="apple-card value-card">
+              <span class="apple-card-icon"><i class="fa-solid fa-water" style="color: #007AFF;"></i></span>
+              <h3 class="apple-card-title">Faith</h3>
+              <p>Trusting God before seeing the results. Laying down plans, picking up the tools, and building for a future only He sees.</p>
+              <div class="value-glow"></div>
+            </div>
+          </div>
+          <!-- Card 3 -->
+          <div class="col-12 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="apple-card value-card">
+              <span class="apple-card-icon"><i class="fa-solid fa-person-walking" style="color: #FF2D55;"></i></span>
+              <h3 class="apple-card-title">Courage</h3>
+              <p>Standing for what is right even when you stand completely alone. Embracing the isolation of the truth.</p>
+              <div class="value-glow"></div>
+            </div>
+          </div>
+          <!-- Card 4 -->
+          <div class="col-12 col-md-6" data-aos="fade-up" data-aos-delay="400">
+            <div class="apple-card value-card">
+              <span class="apple-card-icon"><i class="fa-solid fa-rainbow" style="color: #5856D6;"></i></span>
+              <h3 class="apple-card-title">Hope</h3>
+              <p>Believing God's promises never fail. Knowing that after the fiercest rain, a covenant of peace awaits.</p>
+              <div class="value-glow"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reflection Section -->
+    <section id="reflection" class="bg-light-subtle">
+      <div class="container px-4">
+        <div class="journal-card" data-aos="fade-up">
+          <div class="text-center mb-4">
+            <span class="fs-4"><i class="fa-solid fa-pen-fancy me-2 text-primary"></i> Reflection Journal</span>
+            <h2 class="display-6 fw-bold mt-2">Think About This</h2>
+          </div>
+          <p class="fs-5 text-center text-dark fw-500 mb-4">
+            "What is one area of your life where God is asking you to trust Him more?"
+          </p>
+          <div class="mb-3">
+            <textarea id="journal-input" class="journal-textarea" placeholder="Type your thoughts here... your response is saved privately on this browser."></textarea>
+          </div>
+          <div class="text-center">
+            <button id="save-journal-btn" class="btn btn-apple-primary">
+              <i class="fa-solid fa-bookmark me-1"></i> Save to Journal
+            </button>
+            <div id="journal-status" class="journal-status-msg justify-content-center">
+              <i class="fa-solid fa-circle-check"></i> Saved successfully.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Noah Challenge Section -->
+    <section id="challenge">
+      <div class="container px-4">
+        <div class="row justify-content-center">
+          <div class="col-12 col-lg-10" data-aos="zoom-in">
+            <div class="challenge-card">
+              <div class="rainbow-blob"></div>
+              <div class="position-relative z-index-2 text-center py-4">
+                <span class="badge rounded-pill bg-light text-dark mb-3 px-3 py-2 fs-7">
+                  ⚡ WEEKLY PLEDGE
+                </span>
+                <h2 class="display-5 fw-bold mb-3">Noah's Challenge</h2>
+                <p class="fs-4 text-light-50 mb-2 max-w-700 mx-auto">
+                  What if God asked you to do something nobody else understood?
+                </p>
+                <p class="fs-3 fw-bold text-white mb-4">
+                  Would you obey?
+                </p>
+                <button id="challenge-btn" class="challenge-btn btn-lg">
+                  Take the Challenge
+                </button>
+                <div id="challenge-status" class="challenge-status">
+                  <i class="fa-solid fa-fire-flame-curved"></i> Challenge Accepted! You're walking by faith.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Noah Story Timeline Section -->
+    <section id="timeline" class="bg-light-subtle">
+      <div class="container px-4">
+        <div class="text-center mb-5" data-aos="fade-up">
+          <h2 class="display-5 fw-bold mb-3">Noah's Journey</h2>
+          <p class="lead text-secondary max-w-700 mx-auto">Follow the step-by-step history of the man who built an ark and saved a remnant.</p>
+        </div>
+
+        <div class="row align-items-start g-5">
+          <!-- Floating Sticky Image -->
+          <div class="col-12 col-lg-4 d-none d-lg-block sticky-top" style="top: 100px;">
+            <div class="hero-image-wrapper floating-element">
+              <img src="./noah_attachments/noah3.png" alt="Building the Ark, taking in animals" class="img-fluid">
+            </div>
+            <div class="text-center mt-4">
+              <p class="small text-muted font-monospace">HEBREWS 11:7 PROGRESSION</p>
+            </div>
+          </div>
+
+          <!-- Timeline Stepper -->
+          <div class="col-12 col-lg-8">
+            <div class="timeline-container">
+              <div class="timeline-line"></div>
+              <div class="timeline-line-filled"></div>
+
+              <!-- Step 1 -->
+              <div class="timeline-step" data-aos="fade-up">
+                <div class="timeline-node">1</div>
+                <div class="timeline-content">
+                  <span class="timeline-number">Step 01</span>
+                  <h3 class="timeline-title">God spoke to Noah.</h3>
+                  <p class="mt-2 mb-0">In a corrupt world, God revealed His plan and gave precise blueprints for salvation.</p>
+                </div>
+              </div>
+
+              <!-- Step 2 -->
+              <div class="timeline-step" data-aos="fade-up">
+                <div class="timeline-node">2</div>
+                <div class="timeline-content">
+                  <span class="timeline-number">Step 02</span>
+                  <h3 class="timeline-title">Noah built the Ark.</h3>
+                  <p class="mt-2 mb-0">With zero rain in sight, Noah picked up hammer and gopher wood, working in obedience for decades.</p>
+                </div>
+              </div>
+
+              <!-- Step 3 -->
+              <div class="timeline-step" data-aos="fade-up">
+                <div class="timeline-node">3</div>
+                <div class="timeline-content">
+                  <span class="timeline-number">Step 03</span>
+                  <h3 class="timeline-title">Animals entered the Ark.</h3>
+                  <p class="mt-2 mb-0">By pairs and sevens, creatures of all kinds arrived, guided by God's sovereign command.</p>
+                </div>
+              </div>
+
+              <!-- Step 4 -->
+              <div class="timeline-step" data-aos="fade-up">
+                <div class="timeline-node">4</div>
+                <div class="timeline-content">
+                  <span class="timeline-number">Step 04</span>
+                  <h3 class="timeline-title">The flood came.</h3>
+                  <p class="mt-2 mb-0">The fountains of the deep burst open and rain poured for forty days and forty nights.</p>
+                </div>
+              </div>
+
+              <!-- Step 5 -->
+              <div class="timeline-step" data-aos="fade-up">
+                <div class="timeline-node">5</div>
+                <div class="timeline-content">
+                  <span class="timeline-number">Step 05</span>
+                  <h3 class="timeline-title">God protected Noah and his family.</h3>
+                  <p class="mt-2 mb-0">Shut inside by God's own hand, they remained safe above the rising waters of judgment.</p>
+                </div>
+              </div>
+
+              <!-- Step 6 -->
+              <div class="timeline-step" data-aos="fade-up">
+                <div class="timeline-node">6</div>
+                <div class="timeline-content">
+                  <span class="timeline-number">Step 06</span>
+                  <h3 class="timeline-title">The waters receded.</h3>
+                  <p class="mt-2 mb-0">The ark rested on Mount Ararat. Noah sent out a raven and a dove to search for dry land.</p>
+                </div>
+              </div>
+
+              <!-- Step 7 -->
+              <div class="timeline-step" data-aos="fade-up">
+                <div class="timeline-node">7</div>
+                <div class="timeline-content">
+                  <span class="timeline-number">Step 07</span>
+                  <h3 class="timeline-title">God placed a rainbow in the sky.</h3>
+                  <p class="mt-2 mb-0">A radiant dome of colors crowned the heavens, an everlasting symbol of grace.</p>
+                </div>
+              </div>
+
+              <!-- Step 8 -->
+              <div class="timeline-step" data-aos="fade-up">
+                <div class="timeline-node">8</div>
+                <div class="timeline-content">
+                  <span class="timeline-number">Step 08</span>
+                  <h3 class="timeline-title">God made a promise.</h3>
+                  <p class="mt-2 mb-0">A covenant never again to flood the Earth, calling humanity to walk in newness of life.</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bible Verse Section -->
+    <section id="bible-verse">
+      <div class="container px-4">
+        <div class="row justify-content-center">
+          <div class="col-12 col-md-10 col-lg-8" data-aos="zoom-in">
+            <div class="verse-section shadow-sm">
+              <i class="fa-solid fa-quote-left fs-3 text-secondary mb-3 opacity-50"></i>
+              <blockquote class="verse-quote">
+                "By faith Noah, when warned about things not yet seen, built an ark."
+              </blockquote>
+              <cite class="verse-reference">— Hebrews 11:7</cite>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Prayer Section -->
+    <section id="prayer" class="bg-light-subtle">
+      <div class="container px-4">
+        <div class="row align-items-center g-5">
+          <!-- Text Column -->
+          <div class="col-12 col-md-6 order-2 order-md-1">
+            <div class="prayer-card" data-aos="fade-right">
+              <h2 class="display-6 fw-bold">A Simple Prayer</h2>
+              
+              <div class="prayer-text-container">
+                <div class="prayer-line">Dear Jesus,</div>
+                <div class="prayer-line">Help me obey You like Noah.</div>
+                <div class="prayer-line">Give me faith when I cannot see the future.</div>
+                <div class="prayer-line">Give me courage to follow You even when others do not.</div>
+                <div class="prayer-line">Help me trust Your promises every day.</div>
+                <div class="prayer-line fw-semibold">Amen.</div>
+              </div>
+
+              <button id="prayer-btn" class="btn btn-rainbow">
+                <i class="fa-solid fa-heart me-1"></i> Pray This Prayer
+              </button>
+              <div id="prayer-status" class="prayer-status">
+                <i class="fa-solid fa-sparkles"></i> God hears your prayer. Walk in confidence!
+              </div>
+            </div>
+          </div>
+
+          <!-- Image Column -->
+          <div class="col-12 col-md-6 order-1 order-md-2 text-center" data-aos="fade-left">
+            <div class="hero-image-wrapper mx-auto floating-element">
+              <img src="./noah_attachments/noah4.png" alt="A peaceful sky with a rainbow and dove" class="img-fluid">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="text-center">
+    <div class="container px-4">
+      <div class="mb-4">
+        <p class="footer-quote text-uppercase mb-2">Follow God. Walk by Faith. Live with Purpose.</p>
+        <div class="footer-logo fs-4"><i class="fa-solid fa-rainbow me-1"></i> Noah</div>
+      </div>
+      <p class="small text-muted mb-0">&copy; 2026 Noah Bible App. Apple-inspired design for spiritual reflections.</p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap 5 JS Bundle CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <!-- AOS JS CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+  <!-- Canvas Confetti CDN (Used for Challenge trigger) -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+  <!-- Custom JS Logic -->
+  <script src="app.js"></script>
+</body>
+</html>

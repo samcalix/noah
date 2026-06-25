@@ -193,3 +193,16 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 });
+
+// --- Preloader Dismissal ---
+window.addEventListener('load', () => {
+  const preloader = document.getElementById('preloader');
+  if (preloader) {
+    setTimeout(() => {
+      preloader.classList.add('fade-out');
+      setTimeout(() => {
+        preloader.remove();
+      }, 500);
+    }, 800);
+  }
+});

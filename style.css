@@ -30,6 +30,11 @@
   --transition-fast: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+body.theme-moses {
+  --rainbow-gradient: linear-gradient(135deg, #FF5E36 0%, #FF9500 35%, #007AFF 70%, #5856D6 100%);
+  --rainbow-gradient-light: linear-gradient(135deg, rgba(255,94,54,0.1) 0%, rgba(255,149,0,0.1) 35%, rgba(0,122,255,0.1) 70%, rgba(88,86,214,0.1) 100%);
+}
+
 * {
   box-sizing: border-box;
   margin: 0;

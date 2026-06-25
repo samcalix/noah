@@ -4,6 +4,9 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
+  const isMoses = document.body.classList.contains('theme-moses');
+  const dbPrefix = isMoses ? 'moses' : 'noah';
+
   // Initialize AOS (Animate On Scroll)
   if (typeof AOS !== 'undefined') {
     AOS.init({
@@ -76,33 +79,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // --- Interactive Reflection Journal ---
-  const journalInput = document.getElementById('journal-input');
-  const saveJournalBtn = document.getElementById('save-journal-btn');
-  const journalStatus = document.getElementById('journal-status');
-
-  // Load saved reflection on launch
-  if (journalInput) {
-    const savedReflection = localStorage.getItem('noah_reflection');
-    if (savedReflection) {
-      journalInput.value = savedReflection;
-    }
-
-    if (saveJournalBtn) {
-      saveJournalBtn.addEventListener('click', () => {
-        const content = journalInput.value.trim();
-        if (content) {
-          localStorage.setItem('noah_reflection', content);
-          
-          // Show beautiful success confirmation
-          journalStatus.classList.add('show');
-          setTimeout(() => {
-            journalStatus.classList.remove('show');
-          }, 3000);
-        }
-      });
-    }
-  }
 
   // --- The Noah Challenge Pledge (Confetti Burst) ---
   const challengeBtn = document.getElementById('challenge-btn');
@@ -110,13 +86,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Load challenge state
   if (challengeBtn) {
-    const hasPledged = localStorage.getItem('noah_challenge_pledged') === 'true';
+    const hasPledged = localStorage.getItem(`${dbPrefix}_challenge_pledged`) === 'true';
     if (hasPledged) {
       setChallengePledged(false); // Restore state silently on load
     }
 
     challengeBtn.addEventListener('click', () => {
-      localStorage.setItem('noah_challenge_pledged', 'true');
+      localStorage.setItem(`${dbPrefix}_challenge_pledged`, 'true');
       setChallengePledged(true); // Trigger with animations & confetti!
     });
   }
@@ -168,7 +144,13 @@ document.addEventListener('DOMContentLoaded', () => {
     heart.classList.add('floating-heart');
     
     // Choose premium Font Awesome icons styled with beautiful colors
-    const icons = [
+    const icons = isMoses ? [
+      '<i class="fa-solid fa-fire" style="color: #FF9500;"></i>',           // Burning Bush Fire
+      '<i class="fa-solid fa-water" style="color: #007AFF;"></i>',          // Red Sea Water
+      '<i class="fa-solid fa-hands-praying" style="color: #5856D6;"></i>',  // Prayer
+      '<i class="fa-solid fa-scroll" style="color: #FFCC00;"></i>',         // Commandments
+      '<i class="fa-solid fa-wand-magic-sparkles" style="color: #FF2D55;"></i>' // Wonder Staff
+    ] : [
       '<i class="fa-solid fa-heart" style="color: #FF2D55;"></i>',          // Apple Red
       '<i class="fa-solid fa-rainbow" style="color: #5AC8FA;"></i>',        // Apple Light Blue
       '<i class="fa-solid fa-hands-praying" style="color: #5856D6;"></i>',  // Apple Purple

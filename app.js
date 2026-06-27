@@ -5,7 +5,13 @@
 
 document.addEventListener('DOMContentLoaded', () => {
   const isMoses = document.body.classList.contains('theme-moses');
-  const dbPrefix = isMoses ? 'moses' : 'noah';
+  const isDaniel = document.body.classList.contains('theme-daniel');
+  let dbPrefix = 'noah';
+  if (isMoses) {
+    dbPrefix = 'moses';
+  } else if (isDaniel) {
+    dbPrefix = 'daniel';
+  }
 
   // Initialize AOS (Animate On Scroll)
   if (typeof AOS !== 'undefined') {
@@ -144,7 +150,13 @@ document.addEventListener('DOMContentLoaded', () => {
     heart.classList.add('floating-heart');
     
     // Choose premium Font Awesome icons styled with beautiful colors
-    const icons = isMoses ? [
+    const icons = isDaniel ? [
+      '<i class="fa-solid fa-shield-halved" style="color: #FFCC00;"></i>',  // Faith Shield
+      '<i class="fa-solid fa-crown" style="color: #FF9500;"></i>',           // Kingly Crown
+      '<i class="fa-solid fa-hands-praying" style="color: #5856D6;"></i>',  // Prayer
+      '<i class="fa-solid fa-seedling" style="color: #34C759;"></i>',       // Vegetables (refusal of king's food)
+      '<i class="fa-solid fa-star" style="color: #FF2D55;"></i>'            // Wisdom Star
+    ] : (isMoses ? [
       '<i class="fa-solid fa-fire" style="color: #FF9500;"></i>',           // Burning Bush Fire
       '<i class="fa-solid fa-water" style="color: #007AFF;"></i>',          // Red Sea Water
       '<i class="fa-solid fa-hands-praying" style="color: #5856D6;"></i>',  // Prayer
@@ -156,7 +168,7 @@ document.addEventListener('DOMContentLoaded', () => {
       '<i class="fa-solid fa-hands-praying" style="color: #5856D6;"></i>',  // Apple Purple
       '<i class="fa-solid fa-star" style="color: #FFCC00;"></i>',           // Apple Gold
       '<i class="fa-solid fa-dove" style="color: #34C759;"></i>'            // Apple Green
-    ];
+    ]);
     heart.innerHTML = icons[Math.floor(Math.random() * icons.length)];
     
     // Calculate click coordinates relative to body

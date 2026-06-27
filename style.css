@@ -35,6 +35,11 @@ body.theme-moses {
   --rainbow-gradient-light: linear-gradient(135deg, rgba(255,94,54,0.1) 0%, rgba(255,149,0,0.1) 35%, rgba(0,122,255,0.1) 70%, rgba(88,86,214,0.1) 100%);
 }
 
+body.theme-daniel {
+  --rainbow-gradient: linear-gradient(135deg, #FFD200 0%, #FF9500 30%, #FF2D55 60%, #5856D6 100%);
+  --rainbow-gradient-light: linear-gradient(135deg, rgba(255,210,0,0.1) 0%, rgba(255,149,0,0.1) 30%, rgba(255,45,85,0.1) 60%, rgba(88,86,214,0.1) 100%);
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
